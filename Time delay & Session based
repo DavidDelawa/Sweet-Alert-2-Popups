@@ -26,3 +26,30 @@ if (!localStorage.returning) {
     }, 3000); // alert
     localStorage.returning = true; // set returning
 }
+
+
+//This starts the script when someone tries to exit
+
+$(document).on('mouseleave', leaveFromTop);
+
+function leaveFromTop(e) {
+    if (e.clientY < 0) // less than 60px is close enough to the top
+        Swal.fire({
+        showClass: {
+            popup: 'animate__animated animate__fadeInUp',
+            backdrop: 'swal2-backdrop-show'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__zoomOut'
+        },
+        html: '<a href="https://eventdata.uk/Forms/Form.aspx?FormRef=Hou62Visitor&PageNo=39&TrackingCode=Popup">click</a>',
+        showCloseButton: true,
+        showConfirmButton: false,
+        padding: undefined,
+        imageUrl: 'https://cihhousing.com/AcuCustom/Sitename/Icon/Background/Housing2022-exit-popup.png',
+        imageAlt: 'A tall image',
+    });
+}
+
+
+// <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <script src="sweetalert2.min.js"></script> <link rel="stylesheet" href="sweetalert2.min.css">
