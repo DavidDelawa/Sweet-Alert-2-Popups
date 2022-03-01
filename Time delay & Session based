@@ -1,0 +1,28 @@
+//This starts the popup with with a time delay
+setTimeout(function() {
+    Swal.fire({
+        html: '<a href="https://eventdata.uk/Forms/Form.aspx?FormRef=Hou62Visitor&PageNo=39&TrackingCode=Popup">click</a>',
+        showCloseButton: true,
+        showConfirmButton: false,
+        padding: undefined,
+        imageUrl: 'https://cihhousing.com/AcuCustom/Sitename/Icon/Background/Housing2022-exit-popup.png',
+        imageAlt: 'A tall image',
+    })
+}, 3000);
+
+//This starts the popup with with a time delay and makes it session based
+if (!localStorage.returning) {
+    // run only if returning not stored in localStorage
+
+    setTimeout(function() {
+        Swal.fire({
+            html: '<a href="https://eventdata.uk/Forms/Form.aspx?FormRef=Hou62Visitor&PageNo=39&TrackingCode=Popup">click</a>',
+            showCloseButton: true,
+            showConfirmButton: false,
+            padding: undefined,
+            imageUrl: 'https://cihhousing.com/AcuCustom/Sitename/Icon/Background/Housing2022-exit-popup.png',
+            imageAlt: 'A tall image',
+        })
+    }, 3000); // alert
+    localStorage.returning = true; // set returning
+}
